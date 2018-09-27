@@ -19,7 +19,7 @@ class Sequence {
       if(this.input[i]>this.input[j]){
           var temp1=this.input[i];
           this.input[i]=this.input[j];
-          this.input[j]=temp;
+          this.input[j]=temp1;
       }
     }
   }
@@ -38,7 +38,7 @@ class Sequence {
   }
   avemum(){
       var sum=0;
-      for(var k=0;k<arrlen.length;k++){
+      for(var k=0;k<arrlen;k++){
         sum+=arr[k];
       }
       var ave=(sum/arrlen).toFixed(2);
