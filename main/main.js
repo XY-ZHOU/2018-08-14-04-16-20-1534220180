@@ -14,16 +14,17 @@ class Sequence {
     this.input=input;
   }
   var arr=[];
-  for(var i=0;i<this.input.length;i++){
-    for(var j=i+1;j<this.input.length;j++){
-      if(this.input[i]>this.input[j]){
-          var temp1=this.input[i];
-          this.input[i]=this.input[j];
-          this.input[j]=temp1;
-      }
-    }
+  var len = this.input.length;
+  for (var i = 0; i < len;i++) {
+     for (var j = 0; j < len - 1 - i; j++) {
+       if (this.input[0][j] > this.input[0][j+1]) {
+         var temp = this.input[0][j+1];
+         this.input[0][j+1] = this.input[0][j];
+         this.input[0][j] = temp;
+       }
+     }
   }
-  var arrlen=arr.length;
+ var arr=this.input[0];
   minimum(){
     // Write your code here
     return arr[0];
@@ -31,17 +32,17 @@ class Sequence {
   }
   // Write your code here
   maxmum(){
-      return arr[arrlen-1];
+      return arr[arr.length-1];
   }
   lenmum(){
-      return arrlen;
+      return arr.length;
   }
   avemum(){
       var sum=0;
-      for(var k=0;k<arrlen;k++){
+      for(var k=0;k<arr.length;k++){
         sum+=arr[k];
       }
-      var ave=(sum/arrlen).toFixed(2);
+      var ave=(sum/arr.length).toFixed(2);
       return (ave);
   }
 
