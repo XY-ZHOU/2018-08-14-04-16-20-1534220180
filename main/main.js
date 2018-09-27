@@ -9,41 +9,40 @@ module.exports = function main() {
 };
 
 class Sequence {
-  constructor(input) {
+   constructor(input) {
     // Write your code here
     this.input=input;
   }
-  var arr=[];
-  var len = this.input.length;
-  for (var i = 0; i < len;i++) {
-     for (var j = 0; j < len - 1 - i; j++) {
-       if (this.input[0][j] > this.input[0][j+1]) {
-         var temp = this.input[0][j+1];
-         this.input[0][j+1] = this.input[0][j];
-         this.input[0][j] = temp;
-       }
-     }
-  }
- var arr=this.input[0];
-  minimum(){
-    // Write your code here
-    return arr[0];
-
-  }
-  // Write your code here
-  maxmum(){
-      return arr[arr.length-1];
-  }
-  lenmum(){
-      return arr.length;
-  }
-  avemum(){
-      var sum=0;
-      for(var k=0;k<arr.length;k++){
-        sum+=arr[k];
+  var arr=this.input;
+   var len = arr.length;
+   for (var i = 0;i<len;i++) {
+      for (var j = 0; j < len - 1 - i; j++) {
+        if (arr[j] > arr[j+1]) {
+          var temp = arr[j+1];
+          arr[j+1] = arr[j];
+          arr[j] = temp;
+        }
       }
-      var ave=(sum/arr.length).toFixed(2);
-      return (ave);
-  }
+   }
+
+   minimum(){
+     // Write your code here
+     return arr[0];
+   }
+   // Write your code here
+   maxmum(){
+       return arr[len-1];
+   }
+   lenmum(){
+       return len;
+   }
+   avemum(){
+       var sum=0;
+       for(var k=0;k<len;k++){
+         sum+=arr[k];
+       }
+       var ave=(sum/len).toFixed(2);
+       return (ave);
+   }
 
 }
